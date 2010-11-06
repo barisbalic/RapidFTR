@@ -26,6 +26,7 @@ ActionController::Routing::Routes.draw do |map|
 
     additional_field_actions = FieldsController::FIELD_TYPES.inject({}){|h, type| h["new_#{type}"] = :get; h }
     additional_field_actions[:new] = :get
+    additional_field_actions[:edit] = :get
     additional_field_actions[:move_up] = :post
     additional_field_actions[:move_down] = :post
     additional_field_actions[:delete] = :post

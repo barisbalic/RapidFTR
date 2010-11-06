@@ -1,3 +1,13 @@
+Given /^the following fields exist on the "(.*)" form section:$/ do |form_section,fields_table|
+  formsection = FormSection.get_by_unique_id(form_section)
+
+  fields_table.hashes.each do |field_hash|
+    formsection.add_field(field_hash)
+  end
+  
+  formsection.save
+end
+
 Then /^I should not see the "([^\"]*)" link for the "([^\"]*)" section$/ do |link, section_name|
   row = Hpricot(response.body).search("tr[@id=basic_details_row]").first
 

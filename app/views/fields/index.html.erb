@@ -15,10 +15,13 @@
         <td>
 		    <%= render :partial => "delete_button", :locals =>{:field=>field, :url=>delete_formsection_fields_path(@form_section.unique_id)} %>
         </td>
+        <td>
+		    <%= link_to "Edit", edit_formsection_field_path(:formsection_id => @form_section.unique_id, :id=> field.name)%>
+        </td>
       <%end%>
     </tr>
    <% end %>
 </table>
-       <p>
+<p>
 <%= link_to "Add Custom Field", new_formsection_fields_path(@form_section.unique_id) %>
 </p>

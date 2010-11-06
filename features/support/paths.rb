@@ -94,6 +94,9 @@ module NavigationHelpers
       when /the manage fields page for "(.+)"/
         form_section = $1
         formsection_fields_path(form_section)
+        
+      when /the edit field page for "(.+)" in the "(.+)" form section/
+        edit_formsection_field_path(:formsection_id => $2, :id => $1)
 
       when /the admin page/
         admin_path(options)

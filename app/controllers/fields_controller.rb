@@ -18,6 +18,11 @@ class FieldsController < ApplicationController
     @suggested_fields = SuggestedField.all_unused
     render params[:fieldtype]
   end
+  
+  def edit
+    read_form_section()
+    @field = @form_section.get_field_by_name(params[:id])
+  end
 
   def create
     @form_section = FormSection.get_by_unique_id(params[:formsection_id])

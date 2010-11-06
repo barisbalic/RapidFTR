@@ -37,6 +37,10 @@ class FormSection < CouchRestRails::Document
   def self.get_by_unique_id unique_id
     by_unique_id(:key => unique_id).first
   end
+  
+  def get_field_by_name(field)
+    fields.find {|f| f.name == field}
+  end
 
   def self.add_field_to_formsection formsection, field
     ensure_field_name_not_already_in_use formsection, field
