@@ -193,6 +193,7 @@ td.checkbox { text-align: center;}
 
 /* fields list page */
 .direction-button { display:none }
+.delete-button { display:none }
 
 /* error summary */
 .errorExplanation,
